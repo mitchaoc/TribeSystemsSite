@@ -1,6 +1,7 @@
 import { ThemeProvider } from './components/ThemeProvider';
 import { BottomNav } from './components/BottomNav';
 import { ThemeToggle } from './components/ThemeToggle';
+import { AuthGate } from './components/AuthGate';
 
 export const metadata = {
     title: 'Tribe App Prototype',
@@ -10,16 +11,18 @@ export const metadata = {
 export default function PrototypeLayout({ children }) {
     return (
         <ThemeProvider>
-            <div className="min-h-screen bg-gray-100 flex items-start justify-center">
-                {/* Mobile frame wrapper */}
-                <div className="relative w-full max-w-[430px] min-h-screen bg-white shadow-2xl overflow-hidden">
-                    <ThemeToggle />
-                    <div className="pb-20">
-                        {children}
+            <AuthGate>
+                <div className="min-h-screen bg-gray-100 flex items-start justify-center">
+                    {/* Mobile frame wrapper */}
+                    <div className="relative w-full max-w-[430px] min-h-screen bg-white shadow-2xl overflow-hidden">
+                        <ThemeToggle />
+                        <div className="pb-20">
+                            {children}
+                        </div>
+                        <BottomNav />
                     </div>
-                    <BottomNav />
                 </div>
-            </div>
+            </AuthGate>
         </ThemeProvider>
     );
 }
