@@ -1,0 +1,516 @@
+# Statement of Work: Tribe x Veloce Consumer Banking App — MVP
+
+**Version:** 1.0 (Draft)
+**Date:** February 2026
+**Parties:** Tribe Systems Ltd ("Tribe"), Veloce Media Group ("Veloce")
+
+---
+
+## 1. Executive Summary
+
+Tribe Systems will design, develop and deliver a consumer-facing mobile application for iOS and Android that combines everyday banking functionality with fan engagement features for the Veloce Media Group ecosystem, including the Quadrant brand.
+
+The application provides users with a branded digital wallet and Visa debit card, enabling them to manage their finances while earning rewards and accessing exclusive content, experiences and merchandise tied to Veloce and Quadrant.
+
+**Launch target:** Public release at Money 2026 (June 2026), preceded by an invite-only Family & Friends pilot (April–May 2026).
+
+**Market:** United Kingdom only for MVP. EU expansion planned post-launch.
+
+**Banking infrastructure:** Provided by Railsr/Equals (merged entity). Equals APIs supply account management, card issuance, KYC and transaction processing. A separate workstream covers banking API integration and is not part of this SOW.
+
+**Architecture principle:** The application core is brand-agnostic. Veloce and Quadrant are the launch partners, but the platform is designed to onboard additional fan communities with distinct branding, content and reward structures without rebuilding the application.
+
+---
+
+## 2. Account Tiers
+
+The application offers three subscription tiers, each with distinct pricing, features and card limits. Tier selection occurs during onboarding.
+
+| Feature | Everyday | Plus | Premium |
+|---------|----------|------|---------|
+| **Price** | £4.99/month | £6.99/month | £89.99/year |
+| **Banking** | Core banking with instant balance | Core banking with instant balance | Core banking with instant balance |
+| **Debit card** | Free virtual Visa debit | Free virtual Visa debit | Free virtual Visa debit |
+| **Content** | Access to selected in-app content and perks | Unlock extra rewards and experiences | Full access to premium rewards & experiences |
+| **ATM withdrawals** | Free up to £200/month, then £1/withdrawal | TBC | Free up to £1,000/year, then £1/withdrawal |
+| **Daily card spend limit** | £2,000 | TBC | £5,000 |
+| **FX conversion fee** | 1.5% | TBC | 0.5% |
+| **Support** | 24/7 in-app | 24/7 in-app | Dedicated priority support |
+| **Content collections** | Standard | Enhanced | Exclusive annual collections |
+| **Cancellation** | Anytime. Refund within 14 days if no features used | Anytime | Anytime |
+
+*Note: Plus tier limits to be confirmed during scope finalisation.*
+
+---
+
+## 3. Scope Definition — MVP (Phases 1–3)
+
+Scope is organised by the agreed application navigation structure. Each feature is identified with a unique ID for traceability through design, development, testing and acceptance.
+
+**MVP scope flag:**
+- **IN** = included in June 2026 launch
+- **OUT** = deferred to post-launch phases (placeholder UI only at launch)
+
+---
+
+### 3.1 Onboarding & Registration
+
+The onboarding flow guides new users from download through KYC to their first funded account. It uses a stepped progress indicator (6 steps) with Veloce-branded illustrations throughout.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| ONB-001 | Welcome screen | IN | Veloce-branded landing with "I'm new here" and "Log in" options. Partner logo and tagline. | `designs/16.49.35.png` |
+| ONB-002 | Account tier selection | IN | Choose Your Card screen presenting Everyday (£4.99/mo), Plus (£6.99/mo) and Premium (£89.99/yr) tiers with "See full product details" links. | `designs/16.49.45.png` |
+| ONB-003 | Tier product details | IN | Full feature breakdown per tier: Features & Perks, Fees & Limits, Legal & Important Info, Privacy & Data Use sections. | `designs/16.49.56.png` – `designs/16.50.55.png` |
+| ONB-004 | Name entry (Step 1) | IN | Given name(s) and surname, matching photo ID. Accepted ID types listed. Min 2 chars validation. Links to Terms of Service and Privacy Policy. | `designs/16.51.09.png` |
+| ONB-005 | Email entry (Step 2) | IN | Email address with confirmation field. | `designs/16.51.21.png` |
+| ONB-006 | Email verification | IN | 6-digit code sent to email. Resend code option. Branded "Check Your Inbox" illustration. | `designs/16.51.28.png` |
+| ONB-007 | Mobile number (Step 3) | IN | Phone number entry for account verification and security. | `designs/16.51.41.png` |
+| ONB-008 | Keycode creation (Step 4) | IN | 6-digit keycode (must differ from device passcode). Confirm keycode on second screen. | `designs/16.51.55.png` |
+| ONB-009 | Biometric setup | IN | Prompt to enable Face ID / Fingerprint after keycode confirmation. "Enable now" or "Enable later" options. | `designs/16.52.13.png` |
+| ONB-010 | Date of birth (Step 5) | IN | Date picker for identity verification. | `designs/16.52.21.png` |
+| ONB-011 | Address entry (Step 6) | IN | Address Line 1, Line 2, Town/City, Postcode, Country Code. Must match official documents. | `designs/16.52.34.png` |
+| ONB-012 | KYC verification | IN | Identity checks processed via Equals API. Success screen with branded "You've Passed the Checks" celebration. | `designs/16.52.51.png` |
+| ONB-013 | Legal agreements | IN | Terms of Service and Privacy Policy checkboxes. Links to full documents (hosted on tribesystems-site). | `designs/16.52.59.png` |
+| ONB-014 | Initial payment | IN | Account approved confirmation. Options: "Pay using another card" or "Add funds to my account" or "I've added funds - continue". Monthly fee deduction notice. | `designs/16.53.06.png`, `designs/17.01.21.png` |
+| ONB-015 | Virtual card issuance | IN | Virtual Visa debit card generated and displayed upon successful onboarding. User arrives at Wallet home screen. | `designs/bank1.png` |
+
+**Acceptance criteria (onboarding):**
+- User can complete full registration in a single session
+- KYC pass/fail handled gracefully (fail = clear messaging, support link)
+- Progress is resumable if the user exits mid-flow
+- All form fields have appropriate validation and error states
+- Biometric enrolment is optional but recommended
+- Legal documents are accessible and must be accepted before account creation
+- Account tier selection is changeable up until payment confirmation
+
+---
+
+### 3.2 Wallet (Primary Tab — Landing Page)
+
+The Wallet tab is the application's home screen and primary navigation destination. It provides an overview of the user's financial position and quick access to card management functions.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| WAL-001 | Wallet home screen | IN | Displays current balance prominently (e.g. £693.74), user name, branded virtual card image, quick-action buttons for Card Controls and Add Funds, latest transactions preview, and bottom navigation bar. User account icon top-left. | `designs/bank1.png` |
+| WAL-002 | Virtual card display | IN | Branded Visa debit card showing last 4 digits, partner imagery (e.g. Veloce racing car). Card image is partner-themed and differs per brand. | `designs/bank1.png` |
+| WAL-003 | Balance display | IN | Real-time account balance shown on wallet home. Updates after transactions and top-ups. | `designs/bank1.png` |
+| WAL-004 | Latest transactions preview | IN | 3–5 most recent transactions on wallet home with merchant name, location, logo and amount. Colour-coded (red for debits, green for credits). Tappable to view full transaction list. | `designs/bank1.png` |
+| WAL-005 | Full transaction history | IN | Dedicated transactions screen with search and date filter. Sections for Pending and Completed transactions. Each entry: merchant name, location, merchant logo, amount, date. Running balance per date group. | `designs/bank2.png` |
+| WAL-006 | Add funds | IN | "Add Money" screen offering two methods: (1) Card or digital wallet — Apple Pay, Google Pay, Visa, Mastercard. (2) Bank transfer — displays account details. Funds arrive instantly for card/wallet payments. | `designs/bank3.png` |
+| WAL-007 | Account details | IN | Overlay showing Account Name, Account Number and Sort Code with copy-to-clipboard buttons, for bank transfer top-ups. | `designs/bank4.png` |
+| WAL-008 | Card controls hub | IN | Central card management screen: Add to Apple Wallet, Activate Card, Order Physical Card, Report Card Issue, Card Allowances & Limits. Virtual card displayed at top. | `designs/bank5.png` |
+| WAL-009 | Add to Apple Wallet | IN | Provisions the virtual card into Apple Wallet for contactless payments. Google Wallet equivalent for Android. | `designs/bank5.png` |
+| WAL-010 | Activate card | IN | Card activation flow for new virtual or physical cards. | `designs/bank5.png` |
+| WAL-011 | Freeze / unfreeze card | IN | Toggle to instantly freeze the card (blocks all transactions). Unfreeze to resume. Accessible from card controls and wallet home. | — |
+| WAL-012 | View card details | IN | Secure screen showing: Name on Card, Card Number/PAN, Expiry, CVV with copy buttons. "View my PIN" button with biometric/keycode authentication. Security notice about keeping details private. | `designs/bank13.png` |
+| WAL-013 | Order physical card | IN | Order flow: shows current balance, card cost (£4.99 including delivery). Payment options: account balance or another card. Delivery address confirmation (5–7 working days). Contact customer services option if address needs updating. | `designs/bank7.png`, `designs/bank6.png` |
+| WAL-014 | Report card issue | IN | Form/flow to report lost, stolen or damaged card. Links to customer support. | `designs/bank5.png` |
+| WAL-015 | Allowances & Limits | IN | Tabbed display: **Allowances tab** — UK & EEA ATM allowance (£300/30 days), International ATM (£200/30 days), premium upgrade upsell banner. **Limits tab** — Contactless daily (£500), Card transactions daily (£1,000), ATM daily (£350), ATM monthly (£10,000), with fee info for exceeding allowances. **Transfers** — Top-up by bank transfer (unlimited), cash deposits (£1,000/6 months), transfers out daily (£1,000), Tribe-to-Tribe daily (£2,500). | `designs/bank8.png` – `designs/bank12.png` |
+| WAL-016 | Card customisation | OUT | Allow users to personalise card appearance. Placeholder in card controls. | — |
+| WAL-017 | Savings pots | OUT | Sub-accounts for savings goals. Placeholder on wallet home or as a section. | — |
+| WAL-018 | Rewards preview widget | IN | Small section on wallet home linking to the Rewards tab. Shows summary of available rewards/points. Replaces "Gear & Gratitude" section from original Figma. | — |
+
+**Acceptance criteria (wallet):**
+- Balance updates within 5 seconds of a transaction or top-up
+- Transaction history supports search by merchant name and filtering by date range
+- Card details screen requires biometric or keycode authentication before displaying sensitive data (PAN, CVV, PIN)
+- Physical card order deducts £4.99 from balance or charges selected payment method
+- Freeze/unfreeze takes effect immediately and is reflected in the card controls UI
+- Apple Wallet / Google Wallet provisioning follows platform-specific guidelines
+- All monetary amounts display in GBP with appropriate formatting
+
+---
+
+### 3.3 Payments (Secondary Tab)
+
+The Payments tab provides access to money movement features. For MVP, the majority of payment features are deferred per the updated roadmap to de-risk delivery. The tab will exist with basic transfer functionality and placeholders for future features.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| PAY-001 | Payments landing | IN | Tab landing page with available payment actions and placeholders for coming features. | — |
+| PAY-002 | Transfer money out | IN | Send money to external UK bank accounts via sort code and account number. Amount entry, recipient details, confirmation screen. | — |
+| PAY-003 | Transfer between accounts | OUT | Move money between own accounts/pots within Tribe. | — |
+| PAY-004 | Standing orders | OUT | Set up recurring scheduled payments. | — |
+| PAY-005 | Direct debits | OUT | Set up and manage direct debit mandates. | — |
+| PAY-006 | View scheduled payments | OUT | List of upcoming and recurring payments. | — |
+| PAY-007 | Request money | OUT | Request payment from other Tribe users. | — |
+| PAY-008 | See incoming transfers | OUT | View transfers received from other Tribe users. | — |
+| PAY-009 | Merchandise purchases | OUT | In-app merchandise purchasing. Links to Shop tab or external store. | — |
+| PAY-010 | Event/experience payments | OUT | Payment for events and experiences. Links to Rewards tab. | — |
+
+**Acceptance criteria (payments):**
+- Outbound transfers require recipient sort code, account number, name and amount
+- Transfer confirmation screen shows all details before submission
+- Transfer status is trackable (pending, completed, failed)
+- Daily transfer limits enforced per allowances (£1,000 external, £2,500 Tribe-to-Tribe)
+- Deferred features show clear "Coming Soon" messaging with brief description
+
+---
+
+### 3.4 Rewards (Tertiary Tab)
+
+The Rewards tab (titled "Gear & Gratitude" in the original Figma designs — name TBC per Veloce direction) surfaces fan engagement incentives tied to the Veloce/Quadrant ecosystem. The tab uses a horizontal sub-navigation with five categories: **Merch, Events, Rewards, Experiences, Partner**. Each category displays card-style items with images, descriptions, pricing/availability and action buttons.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| REW-001 | Rewards landing / overview | IN | Landing page with tagline ("Enjoy the perks of being part of the team — discounts, offers, and insider access, all in one place"), horizontal sub-tab navigation (Merch, Events, Rewards, Experiences, Partner), and scrollable content cards. | `designs/rewards1.png` |
+| REW-002 | Merch sub-tab | IN | Scrollable merchandise cards showing product image, name, price and "Buy now" button. Examples: Quadrant Moto Jersey (£75), Quadrant Vintage Cap (£25), Veloce Racing T-Shirt (£25). "Buy now" opens partner Shopify store in in-app browser. | `designs/rewards1.png`, `rewards2.png`, `rewards3.png` |
+| REW-003 | Events sub-tab | IN | Exclusive member events with image, title, availability note ("Limited number of tickets", "20 to be won") and action buttons ("Claim", "Enter"). Examples: Veloce Offices Tour Invite, Meet Team Quadrant. | `designs/rewards6.png`, `rewards7.png` |
+| REW-004 | Rewards sub-tab | IN | Partner-provided offers with image, title, discount/details and "Redeem" button. Examples: restaurant deals (sushi 10% off), hotel bundle offers (Exclusive Member Only), half-price track day tickets. | `designs/rewards4.png`, `rewards5.png` |
+| REW-005 | Experiences sub-tab | IN | Premium experiences with image, title, details and "Redeem" button. Examples: Private tuition from Kevin Hansen (1 free hour to be won). | `designs/rewards7.png` |
+| REW-006 | Partner sub-tab | IN | Partner-specific rewards including crypto/token offers and brand merchandise. Examples: Collect 100 free VEXT coins (first 100 subscribers), free Scuf controller faceplate, 10% off Quadrant Clothing Brand. | `designs/rewards8.png` |
+| REW-007 | Reward detail view | IN | Individual reward detail: full description, terms, how to redeem/claim, expiry, availability. | — |
+| REW-008 | Basic spend-to-earn | OUT | Foundation for earning rewards points through card spend. Points balance display. Specific earn rates and redemption mechanics TBC with Veloce. Phase 4. | — |
+| REW-009 | Referral tier system | OUT | Multi-level referral rewards programme. Phase 4. | — |
+| REW-010 | Personalised offers | OUT | AI-driven personalised reward recommendations based on spending patterns. Phase 4. | — |
+| REW-011 | Sponsor-funded rewards | OUT | Rewards funded by third-party sponsors. Phase 4. | — |
+
+**Acceptance criteria (rewards):**
+- Rewards tab displays all five sub-categories with horizontal tab navigation
+- Each category shows scrollable content cards with images, descriptions and action buttons
+- "Buy now" actions for merchandise open external Shopify store in an in-app browser
+- "Redeem" and "Claim" actions follow a confirmation flow (TBC — may link externally or handle in-app)
+- Reward content is manageable/updatable without app release (CMS or remote config)
+- Content is provided by Veloce/Quadrant and rendered dynamically from a backend source
+- Empty categories display appropriate "coming soon" or placeholder state
+
+---
+
+### 3.5 Shop (Quaternary Tab)
+
+The Shop tab provides access to partner merchandise. For MVP, this links to external partner stores rather than providing native commerce.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| SHP-001 | Shop landing page | IN | Branded landing for Quadrant/Veloce merchandise with links to external store(s). | — |
+| SHP-002 | Native product catalogue | OUT | In-app browsable product catalogue. | — |
+| SHP-003 | In-app checkout | OUT | Native purchase and payment flow within the app. | — |
+| SHP-004 | Order tracking | OUT | Track merchandise orders within the app. | — |
+
+**Acceptance criteria (shop):**
+- Shop tab is present in navigation and accessible
+- Links to external stores open in an in-app browser or external browser (TBC)
+- Branding matches the user's partner theme (Veloce or Quadrant)
+
+---
+
+### 3.6 Side Menu / Account
+
+Accessible via the user account icon (top-left of wallet home screen). Opens as a full-screen overlay showing the user's profile photo, name and member-since date, with three main navigation cards: **My Account**, **My Payouts** and **Help and Support**. Each card uses Veloce-branded racing imagery as backgrounds.
+
+#### 3.6.1 Profile Hub
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| ACC-001 | Profile hub | IN | Full-screen profile page showing user photo (circular), name, membership date. Three branded navigation cards: My Account, My Payouts, Help and Support. Close button (X) to return to wallet. | `designs/settings1.png` |
+
+#### 3.6.2 My Account
+
+My Account has three sub-tabs: **Profile**, **Bank** and **Card**, accessible via a horizontal tab bar with branded imagery.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| ACC-002 | My Account — Profile tab | IN | Displays: Name, Address, Email (editable via pencil icon), Mobile Number (editable via pencil icon), Change keycode link, Log out link. | `designs/settings2.png`, `settings3.png` |
+| ACC-003 | My Account — Bank tab | IN | View bank/account details: account number, sort code, balance. Links to statements or transaction history. | — |
+| ACC-004 | My Account — Card tab | IN | View and manage card product. Links to card controls, order physical card, view card details. Tier upgrade/downgrade option. | — |
+| ACC-005 | Edit email | IN | Inline edit of email address with verification flow. | `designs/settings3.png` |
+| ACC-006 | Edit mobile number | IN | Inline edit of phone number with SMS verification. | `designs/settings3.png` |
+| ACC-007 | Change keycode | IN | Re-authentication required, then 6-digit keycode change flow (same as onboarding keycode creation). | `designs/settings3.png` |
+| ACC-008 | Log out | IN | Secure log-out link at bottom of Profile tab. Clears local session, requires re-authentication. | `designs/settings3.png` |
+
+#### 3.6.3 My Payouts
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| ACC-009 | My Payouts | OUT | Payout history and management. Placeholder for Phase 4. | `designs/settings1.png` |
+
+#### 3.6.4 Help & Support — PITStop AI
+
+The in-app support is delivered through an AI chatbot character called **PITStop** (Personal Intelligence Service), presented as a racing-themed robot. The chat interface uses a conversational bubble format.
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| ACC-010 | PITStop welcome screen | IN | Full-screen introduction to PITStop AI character with branded robot illustration. Tagline: "Hey, I'm PITStop — your Personal Intelligence Service". "Start Chat" button and text input. | `designs/help1.png` |
+| ACC-011 | PITStop chat interface | IN | Conversational chat UI: user messages in purple bubbles (right-aligned), PITStop responses in light bubbles (left-aligned) with PITStop avatar. Message input field at bottom. Handles common queries (card activation, account help, transaction questions). | `designs/help2.png` |
+| ACC-012 | Escalation to human support | IN | When PITStop cannot resolve, offer handoff to human support agent or provide contact information. | — |
+| ACC-013 | FAQ / knowledge base | IN | Searchable FAQ as fallback if chat is not preferred. | — |
+
+#### 3.6.5 Legal
+
+| ID | Feature | MVP | Description | Visual Ref |
+|----|---------|-----|-------------|------------|
+| ACC-014 | Terms & Privacy viewer | IN | Tabbed document viewer with "Terms of Service" and "Privacy Policy" tabs. Veloce-branded header image. Scrollable full-text content. | `designs/terms1.png` |
+| ACC-015 | Close account | IN | Account closure request flow with required regulatory disclosures. Accessible from account settings. | — |
+| ACC-016 | Notification preferences | IN | Push notification opt-in/out by category (transactions, rewards, marketing, security). | — |
+
+**Acceptance criteria (account & support):**
+- Profile hub loads with current user photo, name and membership date
+- My Account sub-tabs (Profile, Bank, Card) are navigable and display correct data
+- Email and phone edits require verification before changes take effect
+- Name and address changes trigger re-verification (KYC impact)
+- PITStop AI handles common banking queries (card activation, balance enquiries, transaction questions) conversationally
+- PITStop provides clear, step-by-step guidance (as shown in Figma: numbered instructions)
+- When PITStop cannot resolve a query, it offers escalation to human support
+- Log out clears local session data and requires re-authentication
+- Terms and Privacy viewer renders full legal text with tab switching
+
+---
+
+### 3.7 Cross-Cutting Concerns
+
+Features that span multiple areas of the application.
+
+| ID | Feature | MVP | Description |
+|----|---------|-----|-------------|
+| XC-001 | Push notifications | IN | Transaction alerts, security notices, reward notifications, marketing (opt-in). Delivered via FCM (Android) and APNs (iOS). |
+| XC-002 | Biometric authentication | IN | Face ID and fingerprint support for login and sensitive operations (view card details, PIN, transfers). Fallback to keycode. |
+| XC-003 | Brand theming | IN | Application appearance adapts to the user's partner affiliation. Veloce and Quadrant themes at launch. Covers: colours, logos, card imagery, illustrations, welcome copy. Additional partner themes addable without code changes. |
+| XC-004 | Data tracking & consent | IN | Foundational analytics and consent framework. GDPR-compliant. Opt-in/opt-out per data category. Built to support future AI-driven personalisation. |
+| XC-005 | Error handling | IN | Consistent error states across all screens. Offline detection with appropriate messaging. Retry logic for failed network requests. |
+| XC-006 | Accessibility | IN | WCAG 2.1 AA compliance. Screen reader support. Minimum contrast ratios. Touch target sizes per platform guidelines. |
+| XC-007 | App security | IN | Certificate pinning, secure token storage, session timeout, jailbreak/root detection. No sensitive data in logs or plain-text storage. |
+| XC-008 | Login / returning user | IN | Biometric or keycode authentication for returning users. Session management with refresh tokens. Auto-lock after inactivity. |
+
+---
+
+## 4. Explicitly Out of Scope — MVP
+
+The following features are acknowledged in the product roadmap but are explicitly excluded from the June 2026 MVP launch. They are planned for Phase 4 (H2 2026) or Phase 5 (2027).
+
+| Category | Deferred Features | Target Phase |
+|----------|-------------------|--------------|
+| Payments | P2P payments, standing orders, direct debits, request money | Phase 4 |
+| Social | Community features, social feeds, user interactions | Phase 4 |
+| Commerce | Creator commerce, in-app marketplace, native checkout | Phase 4–5 |
+| Crypto/Web3 | Stablecoins, VEXT, Bitcoin, token-gated experiences | Phase 5 |
+| Analytics | Advanced spend insights, personalised dashboards | Phase 4 |
+| Payments | 3DS online payment approval | Phase 4 |
+| Geography | EU market rollout | Phase 4 |
+| Monetisation | Sponsor-funded offers and campaigns | Phase 4 |
+| AI | User-facing AI beyond support automation | Phase 4 |
+| Cards | Physical card at scale (orderable from MVP, but virtual-first) | Launch |
+
+---
+
+## 5. Integration Boundaries
+
+Clear delineation of responsibilities between Tribe, Veloce and Equals/Railsr.
+
+| Responsibility | Owner | Notes |
+|----------------|-------|-------|
+| All user-facing screens and app logic | Tribe | iOS and Android via React Native/Expo |
+| Application design and UX | Tribe | Based on approved Figma designs |
+| Brand theming system | Tribe | Veloce and Quadrant themes at launch |
+| Banking API integration | Tribe (separate workstream) | Not covered by this SOW |
+| Account management APIs | Equals | Account creation, balances, statements |
+| Card issuance & management APIs | Equals | Virtual/physical card lifecycle |
+| Transaction processing | Equals | Payments, top-ups, transfers |
+| KYC identity verification | Equals | ID verification, PEP/sanctions screening |
+| Scheme compliance (Visa) | Equals | Card scheme rules, dispute management |
+| Content assets (images, video, copy) | Veloce / Quadrant | Partner-specific content for rewards, shop, branding |
+| Customer support (Tier 2+) | Tribe | Disputes and complex queries |
+| Customer support (AI Tier 1) | Tribe | In-app automated support |
+| App Store submissions | Tribe | iOS App Store and Google Play |
+| Legal documents (T&Cs, Privacy) | Tribe + legal counsel | Hosted on tribesystems-site |
+| Marketing and launch PR | Tribe + Veloce | Coordinated for Money 2026 |
+
+---
+
+## 6. Milestones & Deliverables
+
+### Phase 1 — Core Build (Q1 2026)
+| Deliverable | Description |
+|-------------|-------------|
+| D1.1 | Finalised and approved SOW (this document) |
+| D1.2 | Clickable prototype deployed to Netlify for stakeholder review |
+| D1.3 | Onboarding flow (ONB-001 through ONB-015) functional |
+| D1.4 | Wallet tab complete (WAL-001 through WAL-015, WAL-018) |
+| D1.5 | Basic payments (PAY-001, PAY-002) |
+| D1.6 | Account management (ACC-001 through ACC-010) |
+| D1.7 | Cross-cutting (XC-001 through XC-008) |
+| D1.8 | Rewards tab with placeholder structure (REW-001 through REW-004) |
+| D1.9 | Shop tab with external store links (SHP-001) |
+| D1.10 | Brand theming for Veloce and Quadrant verified |
+
+### Phase 2 — Family & Friends Pilot (Apr–May 2026)
+| Deliverable | Description |
+|-------------|-------------|
+| D2.1 | App deployed to TestFlight (iOS) and internal testing track (Android) |
+| D2.2 | Invite-only access for 500–2,000 users |
+| D2.3 | Operational monitoring and incident response in place |
+| D2.4 | AI-powered Tier 1 support live |
+| D2.5 | Bug fixes and UX improvements based on pilot feedback |
+| D2.6 | Go/no-go assessment for public launch |
+
+### Phase 3 — Public Launch at Money 2026 (June 2026)
+| Deliverable | Description |
+|-------------|-------------|
+| D3.1 | iOS app published to App Store |
+| D3.2 | Android app published to Google Play |
+| D3.3 | Virtual Visa debit card live at scale |
+| D3.4 | Full wallet, payments and account functionality |
+| D3.5 | Rewards and shop tabs live with initial content |
+| D3.6 | PR and launch activities coordinated with Veloce at Money 2026 |
+
+---
+
+## 7. Technical Architecture Summary
+
+*Included for partner visibility. Detailed technical specifications are maintained separately.*
+
+| Aspect | Approach |
+|--------|----------|
+| **Platform** | React Native with Expo (managed workflow) |
+| **Supported OS** | iOS 16+ and Android 12+ |
+| **Navigation** | Expo Router (file-based routing) |
+| **State management** | Zustand (client state) + TanStack Query (server state) |
+| **Language** | TypeScript (strict mode) |
+| **Theming** | Build-time partner configuration. Each partner = separate app build with shared codebase. |
+| **Banking integration** | Abstracted `BankingService` interface consuming Equals APIs |
+| **Authentication** | Biometric + keycode, secure token storage (Expo SecureStore) |
+| **Push notifications** | Expo Notifications with FCM/APNs |
+| **OTA updates** | Expo Updates for non-native code changes |
+| **CI/CD** | EAS Build + EAS Submit for automated builds and store submissions |
+| **Analytics** | Foundational event tracking from day one |
+
+---
+
+## 8. Success Metrics
+
+Aligned with the product roadmap's launch success criteria.
+
+| Metric | Target | Measurement |
+|--------|--------|-------------|
+| Pilot completion rate | >80% of invited users complete onboarding | Analytics |
+| App crash rate | <1% of sessions | Crash reporting |
+| KYC pass rate | >90% of applicants | Equals reporting |
+| Card activation rate | >70% of onboarded users activate virtual card | Analytics |
+| Average top-up within 7 days | >50% of users fund account in first week | Analytics |
+| Customer support resolution | >80% of Tier 1 queries resolved by AI | Support platform |
+| App Store rating | >4.0 at launch | App Store / Play Store |
+
+---
+
+## 9. Assumptions
+
+1. Equals APIs are available, documented and accessible for integration during Phase 1
+2. Veloce provides all brand assets (logos, imagery, colour specifications) for Veloce and Quadrant themes by end of January 2026
+3. KYC verification is handled entirely by Equals — Tribe consumes pass/fail results
+4. Content for the Rewards tab at launch is curated and provided by Veloce
+5. Legal documents (Terms of Service, Privacy Policy) are finalised and approved before pilot launch
+6. App Store and Google Play developer accounts are set up and approved
+7. Tribe has access to Visa card programme through Equals (no separate scheme application needed)
+8. Customer support tooling for Tier 2+ is in place before pilot launch
+
+---
+
+## 10. Risks
+
+| Risk | Impact | Likelihood | Mitigation |
+|------|--------|------------|------------|
+| Equals API delays or instability | Blocks core banking functionality | Medium | Early API integration, mock APIs for parallel development |
+| KYC rejection rates higher than expected | Reduces pilot user base | Low | Pre-screen pilot users, provide clear ID requirements |
+| App Store rejection | Delays launch | Low | Follow platform guidelines strictly, submit early for review |
+| Scope creep from partner requests | Delays delivery | Medium | This SOW as contractual scope baseline, change request process |
+| Content not ready from Veloce | Rewards/Shop tabs launch empty | Medium | Design tabs to work with minimal content, placeholder states |
+| Plus tier limits not confirmed | Incomplete product offering | Low | Launch with Everyday and Premium if Plus not finalised |
+
+---
+
+## 11. Change Management
+
+Any changes to the scope defined in this SOW must be submitted as a formal Change Request (CR). Each CR will be assessed for impact on timeline, cost and resources before approval. Changes to MVP scope after SOW sign-off may affect the Money 2026 launch date.
+
+---
+
+## 12. Visual Reference Index
+
+All Figma design screenshots are stored in the `designs/` directory and referenced throughout this document. The following index maps screenshot files to their content:
+
+### Onboarding Flow
+| File | Content |
+|------|---------|
+| `16.49.35.png` | Welcome / landing screen |
+| `16.49.45.png` | Choose Your Card (tier selection) |
+| `16.49.56.png` | Everyday Account — Features & Perks |
+| `16.50.05.png` | Everyday Account — Fees & Limits |
+| `16.50.12.png` | Everyday Account — Legal Info |
+| `16.50.19.png` | Everyday Account — Privacy & Data Use |
+| `16.50.49.png` | Premium Account — Features & Perks |
+| `16.50.55.png` | Premium Account — Fees & Limits |
+| `16.51.09.png` | Registration Step 1 — Name entry |
+| `16.51.21.png` | Registration Step 2 — Email entry |
+| `16.51.28.png` | Email verification code |
+| `16.51.41.png` | Registration Step 3 — Mobile number |
+| `16.51.55.png` | Registration Step 4 — Create keycode |
+| `16.52.13.png` | Confirm keycode + Biometric prompt |
+| `16.52.21.png` | Registration Step 5 — Date of birth |
+| `16.52.34.png` | Registration Step 6 — Address |
+| `16.52.51.png` | KYC passed — celebration screen |
+| `16.52.59.png` | Legal agreements |
+| `16.53.06.png` | Initial payment |
+
+### Wallet / Banking
+| File | Content |
+|------|---------|
+| `bank1.png` | Wallet home screen |
+| `bank2.png` | Full transaction history |
+| `bank3.png` | Add Money |
+| `bank4.png` | Account details (sort code, account number) |
+| `bank5.png` | Card controls hub |
+| `bank6.png` | Physical card delivery — address confirmation |
+| `bank7.png` | Order physical card — payment |
+| `bank8.png` | Allowances tab |
+| `bank9.png` | Limits tab |
+| `bank10.png` | Transfers in/out limits |
+| `bank11.png` | Allowances (variant) |
+| `bank12.png` | Allowances with premium upgrade banner |
+| `bank13.png` | View card details (PAN, CVV, PIN) |
+
+### Rewards ("Gear & Gratitude")
+| File | Content |
+|------|---------|
+| `rewards1.png` | Rewards landing — Merch sub-tab (Quadrant Jersey, Cap) |
+| `rewards2.png` | Merch sub-tab continued (Cap, Veloce Racing T-Shirt) |
+| `rewards3.png` | Shopify external store (Teamwear page) |
+| `rewards4.png` | Events sub-tab (Extreme E hotel bundle, trackside meal) |
+| `rewards5.png` | Rewards sub-tab (sushi deal, track day tickets) |
+| `rewards6.png` | Experiences sub-tab (Veloce Offices Tour, Meet Team Quadrant) |
+| `rewards7.png` | Experiences continued (Meet Team, Private tuition Kevin Hansen) |
+| `rewards8.png` | Partner sub-tab (VEXT coins, Scuf faceplate, Quadrant clothing discount) |
+
+### Account / Settings
+| File | Content |
+|------|---------|
+| `settings1.png` | Profile hub (photo, name, My Account / My Payouts / Help cards) |
+| `settings2.png` | My Account — Profile tab (name, address, email, phone) |
+| `settings3.png` | My Account — Profile tab continued (email, phone edit, change keycode, log out) |
+
+### Help & Support (PITStop AI)
+| File | Content |
+|------|---------|
+| `help1.png` | PITStop welcome screen (AI robot character introduction) |
+| `help2.png` | PITStop chat interface (conversational support example) |
+
+### Legal
+| File | Content |
+|------|---------|
+| `terms1.png` | Terms of Service / Privacy Policy tabbed viewer |
+
+---
+
+## Appendix A: Clickable Prototype
+
+A mid-fidelity clickable prototype is available at the project's Netlify deployment URL under `/prototype`. This prototype demonstrates:
+
+- The complete navigation structure (Wallet, Payments, Rewards, Shop tabs + side menu)
+- Detailed wallet screens matching the Figma designs
+- Brand theming toggle (Veloce / Quadrant) demonstrating the brand-agnostic architecture
+- Onboarding flow structure
+
+The prototype uses mock data and does not connect to banking APIs. It serves as a visual validation tool for this SOW and should be reviewed alongside this document.
+
+---
+
+*This document is subject to review and sign-off by both Tribe Systems and Veloce Media Group before development commences.*
