@@ -138,12 +138,24 @@ Later Phases (H2 2026–2027):
 * Crypto/Web3 layers
 * Marketplace
 
-Strategic shift after partner feedback:
+Strategic shift after launch partner feedback in Feb 2026 based on our 2025 roadmap:
 
 * Shift from content-first to Banking-first (with MVP content/engagement)
 * Brand-agnostic core platform
 * Fan engagement layered modularly
 * Reduced scope for first launch
+
+We want to ensure that we retain a minimal ecosystem layer that improves activation and retention — because that directly impacts active user numbers (our profit) and therefore scheme marketing upside for V Media Group (their sponsorship $ from the card scheme provider).
+
+Instead of heavy content-first approach deeply integrated into V Media, shift to ecosystem MVP:
+
+• Lightweight branded updates
+• Event-triggered reward notifications
+• A minimal ‘ecosystem touchpoint’ layer
+
+We want to ensure that the card doesn’t feel generic, Users open the app beyond checking balance, Active usage remains high (which maximises scheme marketing eligibility)
+
+i.e. keep content integration operationally light, but strategically important.
 
 ---
 
