@@ -1,13 +1,13 @@
-# Updated Roadmap Baseline — Tribe x X Media Consumer Banking App
+# Updated Roadmap Baseline — Tribe x Veloce Media Consumer Banking App
 
 **Version:** 3.0
 **Date:** February 2026
 **Status:** For Review and Alignment
-**Parties:** Tribe Systems Ltd ("Tribe"), X Media Media Group ("X Media")
+**Parties:** Tribe Systems Ltd ("Tribe"), Veloce Media Group ("Veloce")
 
 **Reference documents:**
-- Original Delivery Roadmap (January 2026)
-- Veloce Figma Feedback (February 2026)
+- Original Delivery Roadmap (22 January 2026)
+- Veloce Figma Feedback (4 February 2026)
 
 **Purpose:** This document presents an updated delivery roadmap incorporating Veloce's feedback and aligned to a banking-first, engagement-smart product strategy. It supersedes the January 2026 roadmap.
 
@@ -67,7 +67,7 @@ This is the first in a sequence of deliverables: **Roadmap Baseline** (this docu
 
 ## 4. Navigation Structure
 
-We are proposing one change to the navigation structure from Veloce's original feedback. The rationale is explained below and in the accompanying covering note.
+We are proposing one change to the navigation structure from Veloce's original feedback. The rationale is explained below.
 
 **Proposed navigation (4 tabs):**
 
@@ -189,7 +189,7 @@ Advanced rewards, crypto via third-party provider, token-gated experiences, mark
 
 ## 7. Dependencies
 
-### From X Media / Q Media
+### From Veloce / Quadrant 
 
 | What | When | Notes |
 |------|------|-------|
@@ -369,4 +369,4 @@ We recommend reviewing and aligning on this roadmap before progressing to the sp
 
 ---
 
-*This document is confidential and intended for Tribe Systems and X Media Media Group only.*
+*This document is confidential and intended for Tribe Systems and Veloce Media Group only.*
