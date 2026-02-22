@@ -95,19 +95,22 @@ Features are prefixed by section. IDs are canonical across all documents.
 
 - **Banking-first, wallet-centric** — not content-first. Wallet is the primary/landing tab (from Veloce feedback)
 - **Brand-agnostic core** — reusable across Veloce, Quadrant, future partners without rebuild
-- **Ecosystem MVP** instead of content feeds — Ecosystem Highlights (wallet carousel, 1-3 slots) + Engagement Rewards (behaviour-triggered). Replaces the original Buzz/Insider/Spotlight content screens.
-- **Deferred to Phase 4:** P2P payments, direct debits, standing orders, community/social, content feeds
+- **Engage tab replaces Payments tab** — Payments tab was 80% empty at MVP (only outbound transfer, rest deferred). Replaced with lightweight curated content feed. Outbound transfers moved to Wallet as quick action.
+- **Ecosystem MVP** — three engagement surfaces: Engage tab (curated feed), Ecosystem Highlights (wallet carousel, 1-3 slots), Engagement Rewards (behaviour-triggered)
+- **Deferred to Phase 4:** Payments tab (returns when feature depth justifies it), P2P payments, direct debits, standing orders, community/social
 - **Phase 4 gated on** 25k monthly transacting users (not just registered)
 - **PITStop** — AI support chatbot character (racing-themed robot)
 - **Reward funding dependency** — Veloce must commit to funding Engagement Rewards incentives
 
-## App Navigation Structure (per Veloce feedback)
+## App Navigation Structure (evolved from Veloce feedback)
 
-1. **Wallet** (primary/landing) — balance, card, transactions, card controls, freeze, add funds, Ecosystem Highlights carousel
-2. **Payments** (secondary) — transfers (MVP: basic outbound only, rest deferred)
+1. **Wallet** (primary/landing) — balance, card, transactions, card controls, freeze, add funds, send money (outbound transfers), Ecosystem Highlights carousel
+2. **Engage** (secondary) — lightweight curated feed: partner announcements, events, rewards highlights, behind-the-scenes content. Replaces Payments tab at MVP.
 3. **Rewards** (tertiary) — sub-tabs: Merch, Events, Rewards, Experiences, Partner
 4. **Shop** (quaternary) — links to external Shopify store for MVP
 5. **Side menu** (account icon top-left) — Profile hub, My Account (Profile/Bank/Card tabs), My Payouts, PITStop Help, Legal
+
+*Note: Payments tab returns in Phase 4 when standing orders, direct debits and P2P are built — sufficient feature depth to justify the navigation slot.*
 
 ## Open Questions (Unresolved)
 
