@@ -1,0 +1,57 @@
+# Initial Feedback
+Given the diverse nature of the XX Group’s ecosystem, and with the recent acquisition and
+integration of YY well known sport person's brand, XX have determined that a brand agnostic approach to
+the bank offering is the most appropriate for the most impactful integration across the ecosystem.
+In their current guise, the Figma designs and wireframes that Tribe have proposed are heavily reliant on the vast amounts of
+content, social media and activities of XX and the branding is heavily dependent on that of the XX
+Group website. It is XX's direction that in order to ensure service viability, the application
+needs to be designed for banking first and XX's ecosystem activity second.
+Following this direction, the application details that are most apt would be those contained within the
+existing Wallet and Profile categories, which encompass banking, rewards, shopping and customisation
+functions. XX proposes the following updated application navigation:
+
+# Refined Navigation
+
+## Primary/Landing Page - Wallet
+
+- Current Balance
+- Accounts (Current, Savings, etc.)
+- Latest Transactions (w/ View All, Standing Orders, Dated Statement Functions)
+- Card Controls (Activate, Order Physical Card, Report Issues, Allowances & Limits, Cancel
+Card)
+- View Card Details
+- Freeze Card
+- Customise/Personalise Card
+- Needs clear icon to user account page (top left)
+- All card functions need clear labelling
+- Section for Pot creation
+- Remove entire Gear & Gratitude section - replace with a small preview that links to the
+rewards page
+- Add Perks/Rewards link to main nav
+
+## Secondary - Payments
+- Merchandise
+- Engagement
+- Events
+- Experiences
+- Partners
+- Easy access to transfer money and make payments
+- Set up direct debits & standing orders
+- View all scheduled payments
+- See transfers from other users
+- Request money feature from other users
+- Option to move money through accounts
+
+## Tertiary - Rewards
+- YY brand
+- Passes (Events & Experiences)
+- Referral Tier
+
+## Quaternary - Shop
+- YY brand
+
+## Side (Burger) Menu
+- Account
+- My Tier
+- Support/Help
+- Legal, Privacy Policy, etc.

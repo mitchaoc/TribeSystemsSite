@@ -1,0 +1,74 @@
+# Product Roadmap – TRIBE / E bank / XX Group
+This roadmap reflects the revised delivery plan aligned to a first scaled public launch at
+Money 2026 (June), with a Family & Friends pilot in April/May 2026 and a reduced MVP
+scope for initial release to keep to original timelines. Subsequent phases expand
+monetisation, engagement, and advanced capabilities through 2nd half of 2026 and 2027.
+
+## Key Assumptions
+• Launch market: UK-only for June 2026; EU expansion post-launch
+• Cards: Virtual-first at launch; physical cards TBC
+• Customer support: TRIBE-led Tier 1 support with AI automation; E Bank managing
+disputes
+• Sponsor monetisation: Deferred to post-launch phases
+• Crypto /NFTs: Deferred to post-launch phases
+
+## Phase 0 – Scope Lock & Programme Reset (Jan 2026)
+• Lock MVP feature scope aligned to June 2026 launch
+• Confirm compliance, operational and support models between TRIBE / E Bank
+• Confirm marketing plan, tiers, branding & customer incentives between TRIBE / XX Group
+• Finalise Figma designs for MVP June 2026 launch
+• Define launch success metrics and go/no-go criteria
+
+## Phase 1 – Continue Core Product Build (Q1 2026)
+• User onboarding and KYC (UK)
+• Account creation and virtual card issuance
+• Card controls (freeze/unfreeze, view details)
+• Transaction history (MVP)
+• Top-ups and card payments
+• Branded content feed (images & video)
+• Push notifications
+• Foundational data tracking and consent framework (AI learning built in from start)
+• Customer support AI interface
+
+### Out of Scope for MVP
+• P2P payments
+• Community or social features
+• Creator commerce or marketplaces
+• Crypto, tokens or Web3 features
+• Advanced analytics or spend insights
+• User-facing AI beyond support automation
+• 3DS payments (approve on-line payments)
+
+## Phase 2 – Family & Friends Pilot (Apr–May 2026)
+• Invite-only pilot (100–500 users)
+• Validate onboarding, card spend, content delivery and support flows
+• AI-powered Tier 1 customer support live
+• Manual monitoring and incident management
+• Bug fixing and UX polish only via customer feedback (no new major features)
+
+## Phase 3 – Public Launch @ Event X 2026 (June 2026)
+• UK public launch on iOS and Android
+• Virtual debit card live at scale
+• Core banking and content experience
+• Basic sponsor visibility (non-monetised)
+• PR and industry launch aligned to Money 2026
+
+## Phase 4 – Monetisation & Engagement Expansion (Q3–Q4 2026)
+• Loyalty and rewards engine
+• Sponsor-funded offers and campaigns
+• Personalised content and offers (AI-assisted)
+• Enhanced analytics and reporting for partners
+• EU market rollout/preparation
+• P2P Payments
+• Community & Social features (MVP)
+• Creator commerce (MVP)
+• More features/advanced versions of MVP scope based on user feedback
+
+## Phase 5 – Ecosystem Expansion (2027)
+• Crypto and stablecoin features via third-party partners (including VEXT, Bitcoin,
+Stablecoin, etc)
+• Token-gated fan experiences
+• Creator payouts and advanced engagement mechanics
+• Marketplace and premium subscriptions
+• Community & Social features (advanced)
+• Creator commerce (MVP)

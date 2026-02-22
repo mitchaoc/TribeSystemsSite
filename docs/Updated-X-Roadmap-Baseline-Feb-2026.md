@@ -1,16 +1,16 @@
-# Updated Roadmap Baseline — Tribe x Veloce Consumer Banking App
+# Updated Roadmap Baseline — Tribe x X Media Consumer Banking App
 
 **Version:** 2.0
 **Date:** February 2026
 **Status:** For Review and Alignment
-**Parties:** Tribe Systems Ltd ("Tribe"), Veloce Media Group ("Veloce")
+**Parties:** Tribe Systems Ltd ("Tribe"), X Media Media Group ("X Media")
 
 **Reference documents:**
 - Original Delivery Roadmap (January 2026)
-- Veloce Figma Feedback (February 2026)
-- SOW v1.0 — Tribe x Veloce Consumer Banking App MVP
+- X Media Figma Feedback (February 2026)
+- SOW v1.0 — Tribe x X Media Consumer Banking App MVP
 
-**Purpose:** This document presents an updated delivery roadmap incorporating Veloce's feedback and aligned to a banking-first, engagement-smart product strategy. It supersedes the January 2026 roadmap and forms the basis for subsequent deliverables.
+**Purpose:** This document presents an updated delivery roadmap incorporating X Media's feedback and aligned to a banking-first, engagement-smart product strategy. It supersedes the January 2026 roadmap and forms the basis for subsequent deliverables.
 
 ---
 
@@ -18,13 +18,13 @@
 
 ### 1.1 What We Heard
 
-Following Veloce's review of the original Figma designs, we received clear and valuable direction on the product vision. The key themes from your feedback:
+Following X Media's review of the original Figma designs, we received clear and valuable direction on the product vision. The key themes from your feedback:
 
 - **Wallet-first navigation** — The wallet and card should be the primary experience, not content or social feeds
 - **Full card management** — Users need comprehensive card controls: freeze, view details, order physical card, set limits, add to Apple Wallet
 - **Payments capability** — Transfers, standing orders, direct debits and peer-to-peer payments are important to the long-term vision
 - **Rewards ecosystem** — Merchandise, events, experiences and partner offers should be accessible through a dedicated rewards area
-- **Quadrant merchandise** — A shop presence for branded merchandise
+- **Q Media merchandise** — A shop presence for branded merchandise
 - **PITStop AI support** — An in-app support character to handle customer queries
 - **Navigation restructure** — Four primary tabs (Wallet, Payments, Rewards, Shop) with account management via a side menu
 
@@ -34,7 +34,7 @@ Based on your feedback, we have made three strategic shifts to the product direc
 
 1. **Banking-first, wallet-centric architecture.** The wallet is now the home screen and primary landing tab. Every user session starts with their financial position — balance, card, recent transactions. This directly reflects your feedback.
 
-2. **Brand-agnostic core platform.** The application core supports Veloce, Quadrant and future partners from a single codebase with themed builds per partner. This means new partnerships do not require a rebuild — they require a new theme configuration.
+2. **Brand-agnostic core platform.** The application core supports X Media, Q Media and future partners from a single codebase with themed builds per partner. This means new partnerships do not require a rebuild — they require a new theme configuration.
 
 3. **Engagement-smart approach.** Rather than building a content-heavy media experience for launch, we are introducing targeted, data-driven engagement surfaces that are measurable from day one and operationally lightweight. This reduces delivery risk while creating the measurement framework needed to optimise engagement post-launch.
 
@@ -53,11 +53,11 @@ Each document builds on the previous. This roadmap sets the direction; subsequen
 
 ## 2. Guiding Principles
 
-These principles underpin every scoping and sequencing decision in this roadmap. They are designed to be shared between Tribe and Veloce as a decision-making framework.
+These principles underpin every scoping and sequencing decision in this roadmap. They are designed to be shared between Tribe and X Media as a decision-making framework.
 
 1. **Banking-first UX** — The wallet is the home screen. Every user session starts with their financial position. Engagement features complement the banking experience; they do not compete with it.
 
-2. **Brand-agnostic core** — The platform supports Veloce, Quadrant and future partners from a single codebase. Partner-specific elements (colours, logos, card imagery, content) are configured per build, not hard-coded.
+2. **Brand-agnostic core** — The platform supports X Media, Q Media and future partners from a single codebase. Partner-specific elements (colours, logos, card imagery, content) are configured per build, not hard-coded.
 
 3. **Engagement-smart, not content-heavy** — Engagement features are data-driven and measurable, not dependent on high-volume content operations. We build surfaces that track impressions, interactions and conversions from day one.
 
@@ -98,14 +98,14 @@ We are currently in a scope alignment period. The purpose is to lock the MVP def
 - Align on scheme marketing targets
 
 **Deliverables:**
-- This updated roadmap baseline (for Veloce review)
+- This updated roadmap baseline (for X Media review)
 - Confirmed Ecosystem MVP scope (Ecosystem Highlights + Engagement Rewards, as defined in Section 4.3)
-- Confirmed minimum content commitment — what Veloce provides for the Rewards tab vs what Tribe manages
-- Rewards funding agreement — tiered incentives confirmed between Tribe and Veloce
+- Confirmed minimum content commitment — what X Media provides for the Rewards tab vs what Tribe manages
+- Rewards funding agreement — tiered incentives confirmed between Tribe and X Media
 - Success metrics alignment document
 - Updated SOW reflecting this roadmap
 
-**Dependencies on Veloce:**
+**Dependencies on X Media:**
 - Brand assets (logos, imagery, colour specifications) — needed by end of February 2026
 - Rewards and merchandise content for the Rewards tab (product images, descriptions, pricing)
 - Commercial confirmation on reward funding for Engagement Rewards
@@ -120,16 +120,16 @@ The primary build phase focuses on delivering a stable, fully functional banking
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Onboarding + UK KYC (ONB-001 to ONB-015) | **[UNCHANGED]** | 6-step onboarding with Veloce-branded illustrations, tier selection, KYC via Equals API |
+| Onboarding + UK KYC (ONB-001 to ONB-015) | **[UNCHANGED]** | 6-step onboarding with X Media-branded illustrations, tier selection, KYC via Equals API |
 | Wallet home screen with balance and card (WAL-001 to WAL-003) | **[UNCHANGED]** | Branded virtual Visa card, real-time balance |
-| Transaction history with search and filters (WAL-004, WAL-005) | **[EVOLVED]** | Expanded per Veloce feedback — pending/completed sections, merchant search, date filtering |
+| Transaction history with search and filters (WAL-004, WAL-005) | **[EVOLVED]** | Expanded per X Media feedback — pending/completed sections, merchant search, date filtering |
 | Add funds — card, digital wallet, bank transfer (WAL-006, WAL-007) | **[UNCHANGED]** | Apple Pay, Google Pay, Visa, Mastercard, bank transfer with account details |
-| Card controls hub (WAL-008 to WAL-014) | **[EVOLVED]** | Expanded per Veloce feedback — full management: freeze, details, Apple Wallet, order physical, report issue |
+| Card controls hub (WAL-008 to WAL-014) | **[EVOLVED]** | Expanded per X Media feedback — full management: freeze, details, Apple Wallet, order physical, report issue |
 | Allowances and limits (WAL-015) | **[UNCHANGED]** | Tabbed display: allowances, limits, transfers |
 | Basic outbound transfer (PAY-001, PAY-002) | **[UNCHANGED]** | Send money to external UK bank accounts |
-| Rewards tab with 5 content categories (REW-001 to REW-007) | **[UNCHANGED]** | Merch, Events, Rewards, Experiences, Partner — content provided by Veloce/Quadrant |
-| Shop tab — external store link (SHP-001) | **[UNCHANGED]** | Links to Quadrant Shopify store |
-| PITStop AI support (ACC-010 to ACC-013) | **[NEW]** | AI chatbot for Tier 1 support, added per Veloce feedback |
+| Rewards tab with 5 content categories (REW-001 to REW-007) | **[UNCHANGED]** | Merch, Events, Rewards, Experiences, Partner — content provided by X Media/Q Media |
+| Shop tab — external store link (SHP-001) | **[UNCHANGED]** | Links to Q Media Shopify store |
+| PITStop AI support (ACC-010 to ACC-013) | **[NEW]** | AI chatbot for Tier 1 support, added per X Media feedback |
 | Account management (ACC-001 to ACC-008, ACC-014 to ACC-016) | **[UNCHANGED]** | Profile hub, My Account (Profile/Bank/Card tabs), terms viewer, notification preferences |
 | Cross-cutting: security, auth, accessibility (XC-001 to XC-008) | **[UNCHANGED]** | Push notifications, biometric auth, brand theming, data consent, error handling, app security |
 | Direct debits (PAY-005) | **[MOVED → Phase 4]** | Requires BACS sponsored access, retry and notification infrastructure. See Section 5. |
@@ -158,7 +158,7 @@ This infrastructure is the prerequisite for Phase 4 monetisation. Engagement opt
 
 The Ecosystem MVP creates two targeted engagement surfaces that complement the banking experience without introducing content operational overhead. These are built in parallel with the core banking work.
 
-**Important clarification:** The Ecosystem MVP is *complementary* to the Rewards tab (REW-001 to REW-007). The Rewards tab is Veloce's content showcase — merchandise, events, experiences and partner offers. The Ecosystem MVP adds a dynamic, data-driven layer that surfaces highlights from the Rewards tab onto the wallet home screen and creates behaviour-driven incentives tied to card usage.
+**Important clarification:** The Ecosystem MVP is *complementary* to the Rewards tab (REW-001 to REW-007). The Rewards tab is X Media's content showcase — merchandise, events, experiences and partner offers. The Ecosystem MVP adds a dynamic, data-driven layer that surfaces highlights from the Rewards tab onto the wallet home screen and creates behaviour-driven incentives tied to card usage.
 
 #### Ecosystem Highlights (Wallet Home)
 
@@ -167,7 +167,7 @@ The Ecosystem MVP creates two targeted engagement surfaces that complement the b
 A small carousel on the wallet home screen, positioned below the card and quick actions. Maximum 1–3 slots at any time.
 
 **Content types:**
-- Reward unlock announcements (e.g. "You've earned entry to the Quadrant Meet & Greet draw")
+- Reward unlock announcements (e.g. "You've earned entry to the Q Media Meet & Greet draw")
 - Event-related incentives (e.g. "Race weekend — 2x cashback on all card spend")
 - Limited-time partner offers (e.g. "48 hours: 15% off at Scuf Gaming")
 - VIP tier recognition (e.g. "Welcome to Plus — your new perks are live")
@@ -178,7 +178,7 @@ A small carousel on the wallet home screen, positioned below the card and quick 
 - Not a CMS-managed editorial experience
 - Not a social feed
 
-**Why it matters for Veloce:** Every time a user opens the app to check their balance, they see a Veloce-branded engagement touchpoint. The carousel is your brand presence in every banking session.
+**Why it matters for X Media:** Every time a user opens the app to check their balance, they see a X Media-branded engagement touchpoint. The carousel is your brand presence in every banking session.
 
 **Tracking built in:** Each slot tracks impressions, tap-throughs and conversions. This data feeds directly into the analytics infrastructure and informs what content and offers perform best — enabling data-driven decisions about what to expand in Phase 4.
 
@@ -194,9 +194,9 @@ Financial behaviour triggers ecosystem reinforcement, creating a loop between ca
 | Refer a friend who activates | VIP status bump | Organic acquisition at low cost |
 | First card transaction | Welcome bonus | Drives activation rate |
 
-**Why it matters for Veloce:** Engagement Rewards drive the transaction velocity that unlocks scheme marketing incentives. More card spend from active users means a larger marketing budget from the card scheme provider. This is the engine that makes the growth model work.
+**Why it matters for X Media:** Engagement Rewards drive the transaction velocity that unlocks scheme marketing incentives. More card spend from active users means a larger marketing budget from the card scheme provider. This is the engine that makes the growth model work.
 
-**Dependency — reward funding:** The rewards in this system require real incentives. Prize draw entries, cashback boosts, exclusive perks and VIP benefits must be funded. The reward funding model — including who funds which incentives and at what tier — needs to be confirmed during the current Scope Alignment period. Engagement Rewards activation is contingent on an agreed incentive budget between Tribe and Veloce.
+**Dependency — reward funding:** The rewards in this system require real incentives. Prize draw entries, cashback boosts, exclusive perks and VIP benefits must be funded. The reward funding model — including who funds which incentives and at what tier — needs to be confirmed during the current Scope Alignment period. Engagement Rewards activation is contingent on an agreed incentive budget between Tribe and X Media.
 
 ---
 
@@ -221,7 +221,7 @@ Financial behaviour triggers ecosystem reinforcement, creating a loop between ca
 
 ### 4.5 Phase 3: Public Launch at Money 2026 (June 2026)
 
-Public UK launch coordinated with Veloce at the Money 2026 conference.
+Public UK launch coordinated with X Media at the Money 2026 conference.
 
 #### Live at Launch
 
@@ -230,8 +230,8 @@ Public UK launch coordinated with Veloce at the Money 2026 conference.
 - Basic outbound payments (external UK bank transfers)
 - Ecosystem Highlights carousel on wallet home
 - Engagement Rewards (basic behaviour-triggered mechanics)
-- Rewards tab with Veloce/Quadrant content (Merch, Events, Rewards, Experiences, Partner)
-- Shop tab linking to external Quadrant Shopify store
+- Rewards tab with X Media/Q Media content (Merch, Events, Rewards, Experiences, Partner)
+- Shop tab linking to external Q Media Shopify store
 - PITStop AI Tier 1 support
 - Account management (profile, bank details, card management)
 - Referral tracking (basic)
@@ -267,7 +267,7 @@ Public UK launch coordinated with Veloce at the Money 2026 conference.
 **Planned additions:**
 - Sponsor-funded campaigns and rewards (REW-011, using impression and conversion data from Phase 1 infrastructure)
 - Segmented offers (using tier and segment tagging from Phase 1 infrastructure)
-- Enhanced analytics dashboard for Veloce — engagement, conversion and spend data
+- Enhanced analytics dashboard for X Media — engagement, conversion and spend data
 - Limited personalisation rules (data-informed, not speculative)
 - Standing orders and direct debits (PAY-004, PAY-005)
 - Transfer between own accounts/pots (PAY-003)
@@ -302,7 +302,7 @@ Public UK launch coordinated with Veloce at the Money 2026 conference.
 
 ## 5. Deferred Features — Phasing Rationale
 
-The following features were discussed in Veloce's feedback or the original roadmap. We recommend deferring them to later phases. In each case, the infrastructure to support these features is being designed into Phase 1 — they are planned, not abandoned.
+The following features were discussed in X Media's feedback or the original roadmap. We recommend deferring them to later phases. In each case, the infrastructure to support these features is being designed into Phase 1 — they are planned, not abandoned.
 
 ### 5.1 Peer-to-Peer Payments and Request Money
 
@@ -342,7 +342,7 @@ The following features were discussed in Veloce's feedback or the original roadm
 
 ## 6. Dependencies and Commitments
 
-### From Veloce / Quadrant
+### From X Media / Q Media
 
 | Dependency | Timing | Notes |
 |------------|--------|-------|
@@ -407,7 +407,7 @@ Shared KPIs that define what good looks like. These metrics gate entry to Phase 
 
 This roadmap baseline is the first step. The following deliverables will build on this foundation:
 
-1. **This document** — Updated Roadmap Baseline *(current — for Veloce review and alignment)*
+1. **This document** — Updated Roadmap Baseline *(current — for X Media review and alignment)*
 2. **Product Specification** — Detailed feature descriptions per phase, building on SOW feature IDs
 3. **Lightweight Use Cases** — Key user journeys: onboarding, first transaction, rewards discovery, referral, support
 4. **Updated Wireframes** — Visual reference for new and modified flows, evolving the existing clickable prototype
@@ -432,7 +432,7 @@ A summary of every change from the original roadmap for quick reference.
 | Engagement Rewards | Not in original | Behaviour-triggered reward mechanics | **[NEW]** |
 | Analytics infrastructure | Not explicit | Event tracking, impressions, conversions, rewards ledger | **[NEW]** |
 | GDPR consent framework | Not explicit | Tagged consent layer for all data collection | **[NEW]** |
-| Rewards tab content | Part of content-first approach | 5 sub-tabs with Veloce/Quadrant content (preserved) | **[UNCHANGED]** |
+| Rewards tab content | Part of content-first approach | 5 sub-tabs with X Media/Q Media content (preserved) | **[UNCHANGED]** |
 | Content feeds (Buzz/Insider/Spotlight) | Phase 1 | Replaced by Ecosystem MVP | **[DEFERRED]** |
 | P2P payments | Phase 3–4 | Phase 4, gated on active user volume | **[MOVED]** |
 | Request money | Phase 3–4 | Phase 4, gated | **[MOVED]** |
@@ -446,4 +446,4 @@ A summary of every change from the original roadmap for quick reference.
 
 ---
 
-*This document is confidential and intended for Tribe Systems and Veloce Media Group only.*
+*This document is confidential and intended for Tribe Systems and X Media Media Group only.*
