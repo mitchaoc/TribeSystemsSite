@@ -3,24 +3,23 @@
 **To:** Veloce Media Group — Executive Team
 **From:** Tribe Systems
 **Date:** February 2026
-**Re:** Updated Delivery Roadmap — Tribe x Veloce Consumer Banking App
+**Re:** Updated Delivery Roadmap — Tribe & Veloce Consumer Banking App
 
 ---
 
 Hi team,
 
-Please find attached the updated roadmap baseline for the Tribe x Veloce app. This document incorporates the feedback you gave on the original Figma designs and represents where we believe the product direction should land for a June launch at Money 2026.
+Please find attached the updated roadmap baseline for the Tribe & Veloce app. This document incorporates the feedback you gave on the original Figma designs and represents where we believe the product direction should land for a June launch at Money 2026.
 
 We want to walk you through the key decisions, particularly one change from the navigation structure you proposed that we believe is in both our interests.
 
 ## What stayed the same
 
-Your core feedback was right, and we've built on it:
+We've taken on board your core feedback that the original Figma designs were too content-heavy, and we've built on it:
 
-- **Wallet-first.** The wallet is the home screen. Banking is the primary experience. We agree completely.
+- **Wallet-first.** The wallet is the home screen. Banking is the primary experience.
 - **Full card management.** Freeze, details, Apple Wallet, order physical card, limits — all included at launch.
 - **Rewards and merchandise.** The Rewards tab with Merch, Events, Experiences and Partner content is preserved exactly as discussed.
-- **PITStop AI support.** In-app, racing-themed chatbot for customer queries — added as you requested.
 - **Quadrant Shop.** External Shopify link for branded merchandise.
 
 ## What we've evolved: Engage tab replaces Payments
@@ -45,20 +44,24 @@ A lightweight **Engage** tab — a curated feed of 5–10 items featuring partne
 
 4. **Veloce's content commitment.** You've already agreed to supply content as part of our partnership. The Engage tab creates the surface for it — a branded space where Veloce and Quadrant content drives daily engagement. Without it, that content has nowhere to live except a small carousel on the wallet home.
 
-**This is a middle ground.** We heard your feedback that the original Figma designs were too content-heavy. We agree — three content tabs with social features, infinite scroll and live feeds was too much. But we also believe that stripping content out entirely leaves the app feeling like a commodity banking product. The Engage tab is the measured middle ground: operationally light, strategically powerful, data-driven from day one.
+**This is a middle ground.** We heard your feedback that the original Figma designs were too content-heavy. With all the optional features switched on, we agree — three content tabs with social features, infinite scroll and live feeds would be too much to manage. But we also believe that stripping content out entirely leaves the app feeling like a commodity banking product. The Engage tab is the measured middle ground: operationally light, strategically powerful, data-driven from day one.
 
 **The Payments tab returns in Phase 4** — when standing orders, direct debits, and P2P payments are built. At that point, there's genuine feature depth to justify the navigation slot.
+
+## Two features planned for Phase 4
+
+You mentioned card personalisation and savings pots in your feedback. Both are on the roadmap — planned for Phase 4 once the core banking experience is stable and we have the user volume to justify the added complexity. We didn't want these to get lost.
 
 ## What we need from you
 
 1. **Review the attached roadmap** and let us know if you'd like to discuss any aspect
 2. **Confirm your content commitment** for the Engage tab — 5–10 curated items at launch, refreshed regularly
-3. **Confirm the reward funding model** — who funds the cashback boosts, prize draws, and perks in the Engagement Rewards system
+3. **Confirm the reward funding model** — who funds the cashback boosts, prize draws, and perks in the Engagement Rewards system. This is the one open commercial question we need resolved before build begins.
 4. **Brand assets** by end of February — logos, imagery, colour specifications for themed builds
 
 ## Next steps
 
-Once we're aligned on this roadmap, we move to the Feature Specification — detailed descriptions of each feature group. Then user journeys and wireframes. Each document builds on the previous, and we iterate together.
+Once we're aligned on this roadmap, we can complete wireframes for the key screens and features, and continue building the core capability in parallel. Once your branding guidelines are available we will update our wireframes and finalise the UI look and feel with you.
 
 We'd welcome a call to walk through this in detail. Happy to adjust the meeting cadence to whatever works for your team.
 

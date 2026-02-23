@@ -1,4 +1,4 @@
-# Updated Roadmap Baseline — Tribe x Veloce Media Consumer Banking App
+# Roadmap Baseline — Tribe & Veloce Media Consumer Banking App
 
 **Version:** 3.0
 **Date:** February 2026
@@ -6,10 +6,10 @@
 **Parties:** Tribe Systems Ltd ("Tribe"), Veloce Media Group ("Veloce")
 
 **Reference documents:**
-- Original Delivery Roadmap (22 January 2026)
+- Tribe Program Roadmap (22 January 2026)
 - Veloce Figma Feedback (4 February 2026)
 
-**Purpose:** This document presents an updated delivery roadmap incorporating Veloce's feedback and aligned to a banking-first, engagement-smart product strategy. It supersedes the January 2026 roadmap.
+**Purpose:** This document presents an updated delivery roadmap incorporating Veloce's feedback on Tribe's Figma designs and aligned to a banking-first, engagement-smart product strategy. It supersedes the January 2026 roadmap.
 
 ---
 
@@ -17,7 +17,7 @@
 
 ### What We Heard
 
-Following your review of the original Figma designs, we received clear direction: the wallet and card should be the primary experience, not content or social feeds. You asked for comprehensive card management, a robust rewards ecosystem, Quadrant merchandise access, PITStop AI support, and a cleaner navigation structure.
+Following your review of the original Figma designs, we received clear direction: the wallet and card should be the primary experience, not content or social feeds. You asked for comprehensive card management, a robust rewards ecosystem, Quadrant merchandise access, a dedicated support and help section, and a cleaner navigation structure.
 
 ### How We Responded
 
@@ -80,15 +80,17 @@ We are proposing one change to the navigation structure from Veloce's original f
 
 **Side menu** (account icon, top-left): Profile hub, My Account, PITStop Help, Legal
 
+*[Screen designs — see attached Figma / wireframes]*
+
 ### Why Engage replaces Payments
 
-Your feedback proposed a Payments tab with transfers, standing orders, direct debits and peer-to-peer payments. After detailed analysis, we recommend replacing this with an Engage tab at launch for three reasons:
+Your feedback proposed a Payments tab with transfers, standing orders, direct debits and peer-to-peer payments. We've thought carefully about this, and we're recommending the Engage tab in its place at launch for three reasons:
 
-1. **The Payments tab would be near-empty at launch.** With standing orders, direct debits and P2P payments responsibly deferred to Phase 4 (see Appendix B), the tab would contain a single "Transfer money" button and four "Coming Soon" placeholders. A near-empty tab in prime navigation damages the premium feel of the app.
+1. **Engagement drives the metrics that matter.** Fan engagement content — announcements, events, behind-the-scenes access — gives users reasons to open the app between transactions. Higher daily active users drives more card transactions, which drives higher scheme marketing revenue for Veloce. Content and perks are what makes fans pay £4.99/month instead of using a free banking app.
 
 2. **Outbound transfers belong in the Wallet.** Sending money is a wallet action — it sits naturally alongside "Add funds" and "Card controls" as a quick action on the wallet home screen. Users expect to manage their money from where they see their money.
 
-3. **Engagement drives the metrics that matter.** Fan engagement content — announcements, events, behind-the-scenes access — gives users reasons to open the app between transactions. Higher daily active users drives more card transactions, which drives higher scheme marketing revenue for Veloce. Content and perks are what makes fans pay £4.99/month instead of using a free banking app.
+3. **The Payments tab needs feature depth to earn its place.** With standing orders, direct debits and P2P payments responsibly deferred to Phase 4 (see Appendix B), the tab would launch with a single "Transfer money" button. A near-empty tab in prime navigation undercuts the premium feel of the product — and of the subscription price.
 
 **This is a middle ground.** The original Figma designs had three content-heavy tabs (Buzz, Insider, Spotlight) with social features, infinite scroll and live feeds. That was too operationally heavy for launch. A purely banking-only app with no engagement surface is too thin to justify a subscription or differentiate from free alternatives. The Engage tab is the measured middle ground — a curated feed of 5–10 items, managed via remote config, tracked for engagement, and operationally lightweight.
 
@@ -204,11 +206,9 @@ Advanced rewards, crypto via third-party provider, token-gated experiences, mark
 
 | What | When |
 |------|------|
-| Feature Specification | Following roadmap sign-off |
-| User Journeys | Following feature spec |
-| Updated wireframes | Following user journeys |
+| Updated wireframes | Following roadmap sign-off |
 | Technical architecture and infrastructure | Phase 1 build |
-| PITStop AI training and configuration | Phase 1 build |
+| PITStop AI configuration | Phase 1 build |
 
 ### From Equals / Railsr
 
@@ -274,7 +274,7 @@ We recommend reviewing and aligning on this roadmap before progressing to the sp
 | Outbound UK bank transfers | **[EVOLVED]** | Moved from Payments tab into Wallet as a quick action |
 | Rewards tab (5 content categories) | **[UNCHANGED]** | Merch, Events, Rewards, Experiences, Partner |
 | Shop tab (external store) | **[UNCHANGED]** | Links to Quadrant Shopify store |
-| PITStop AI support | **[NEW]** | AI chatbot for Tier 1 support |
+| PITStop AI support | **[EVOLVED]** | AI chatbot for Tier 1 support — in side menu as you proposed |
 | Account management | **[UNCHANGED]** | Profile hub, My Account (Profile/Bank/Card tabs) |
 | Cross-cutting (security, auth, a11y) | **[UNCHANGED]** | Push notifications, biometric auth, theming, consent, security |
 
@@ -325,6 +325,14 @@ We recommend reviewing and aligning on this roadmap before progressing to the sp
 
 **Rationale:** Direct debit origination requires BACS membership or sponsored access through Equals. Standing orders require scheduling infrastructure with guaranteed execution and retry logic. Basic outbound transfers (in the Wallet) cover the core need at launch.
 
+### Card Personalisation and Savings Pots
+
+**Your feedback included:** Card personalisation (custom card design) and savings pots.
+
+**Our recommendation:** Phase 4.
+
+**Rationale:** Both are valuable features that strengthen the product's differentiation. Card personalisation requires artwork production and card scheme approval workflows that sit outside the critical path for June. Savings pots require a separate ledger model and FSCS communication considerations. Neither blocks launch, and both are well-suited to Phase 4 when the core product is proven and we have user data to inform the experience.
+
 ### Community and Social Features
 
 **Our recommendation:** Phase 4 at earliest, likely Phase 5.
@@ -351,7 +359,7 @@ We recommend reviewing and aligning on this roadmap before progressing to the sp
 | Engage tab | Not in original; replaced Buzz/Insider/Spotlight | Curated lightweight content feed | **[NEW]** |
 | Card management | Basic card display | Full hub: freeze, details, controls, limits, Apple Wallet | **[EVOLVED]** |
 | Transaction history | Basic list | Search, date filter, pending/completed sections | **[EVOLVED]** |
-| PITStop AI support | Not in original | In-app AI chatbot for Tier 1 queries | **[NEW]** |
+| PITStop AI support | Gen AI assistant (original roadmap) | In-app AI chatbot in side menu, as proposed | **[EVOLVED]** |
 | Ecosystem Highlights | Not in original | Dynamic carousel on wallet home (1–3 slots) | **[NEW]** |
 | Engagement Rewards | Not in original | Behaviour-triggered reward mechanics | **[NEW]** |
 | Analytics infrastructure | Not explicit | Event tracking, impressions, conversions, rewards ledger | **[NEW]** |
